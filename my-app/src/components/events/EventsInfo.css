@@ -1,0 +1,126 @@
+body {
+    font-size: 18px;
+  }
+  
+  .innerrow {
+    margin-top: 30px;
+    box-shadow: rgb(0 0 0 / 50%) 0px 1px 2px;
+    padding: 30px;
+  }
+  
+  .spac {
+    margin-left: 10px;
+  }
+  
+  
+  
+  .heads {
+      height: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #86211b;
+    color: white;
+  }
+
+  .btn {
+    margin-left: 27rem;
+    background-color: rgb(134, 33, 27);
+    color: white;
+    width: 100px;
+    height: 60px;
+  }
+  
+  body {
+    background-color: rgb(235, 231, 231);
+  }
+  
+  .maincontainer {
+    background-color: white;
+  }
+
+  .mr-b {
+      margin-bottom: 20px !important;
+  }
+
+  .mr-l {
+      margin-left: 10px;
+  }
+  
+  .flexes {
+    display: flex;
+    /* border: 1px solid black; */
+    /* box-shadow: rgb(0 0 0 / 50%) 0px 1px 2px; */
+    padding-top: 5px;
+  }
+  
+  
+  
+  .edits {
+    color: white;
+    width: 20%;
+  }
+  
+  .text-white {
+    margin-left: 4%;
+  }
+  
+  
+  .listele {
+    padding: 10px;
+    /* background-color: #f1f1f1; */
+    margin: 10px;
+  }
+  
+  .listele a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #86211b;
+  }
+  
+  .listele a:hover {
+    color: #444;
+  }
+  
+  .card-img-top {
+    width: 50px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    width: 50%;
+    margin: 20px auto;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .hert {
+    margin-right: 15px;
+  }
+  
+  .hert:hover {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .cmt:hover {
+    color: blue;
+    cursor: pointer;
+  }
+  
+  .vmore {
+    width: 40%;
+    margin: 0 auto;
+    background-color: #8a221b;
+    color: white;
+  }
+  
+  .vmore:hover {
+    background-color: white;
+    color: #86211b;
+    border: 1px solid #86211b;
+  }
+  
