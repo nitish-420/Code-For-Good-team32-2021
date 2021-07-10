@@ -1,0 +1,65 @@
+body {
+  font-size: 18px;
+}
+
+.flexes {
+  display: flex;
+  box-shadow: rgb(0 0 0 / 50%) 0px 1px 2px;
+  padding-top: 5px;
+}
+
+.left {
+  text-align: left;
+}
+.right {
+  float: right;
+}
+
+.nobull {
+  list-style-type: none;
+}
+
+.listele {
+  padding: 10px;
+  background-color: aliceblue;
+  margin: 10px;
+}
+
+.listele a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.listele a:hover {
+  color: blueviolet;
+}
+
+.card-img-top {
+  height: 400px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hert {
+  margin-right: 15px;
+}
+
+.hert:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.cmt:hover {
+  color: blue;
+  cursor: pointer;
+}
