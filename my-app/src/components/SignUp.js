@@ -6,11 +6,13 @@ import { useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import './SignUp.css'
-// import axios from 'axios';
+import axios from 'axios';
 
 export const SignUp = () => {
     const history = useHistory();
     let emailRef = useRef();
+    let fullNameRef = useRef();
+    let phoneNumberRef = useRef();
     let passwordRef = useRef();
     let passwordConfirmRef = useRef();
     const [error, setError] = useState('');
@@ -27,7 +29,12 @@ export const SignUp = () => {
         try {
             setError('');
             setLoading(true);
-            await signUp(emailRef.current.value, passwordRef.current.value)
+            // await signUp(emailRef.current.value, passwordRef.current.value)
+
+            axios.post('/signup', { email: emailRef.current.value, mobile: phoneNumberRef.current.value, username: fullNameRef.current.value })
+                .then()
+                .catch(err => console.log(err));
+            
         } catch (err) {
             setError(err.message)
         }
@@ -55,13 +62,14 @@ export const SignUp = () => {
                                                 (error) ? <div className="alert alert-danger" role="alert">{error}</div> : ''
                                             }
                                             <div class="form-group mb-3">
-                                                <input type="first name" placeholder="First Name" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" />
+                                                <input type="first name" placeholder="Full Name" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" ref={fullNameRef}/>
                                             </div>
-                                            <div class="form-group mb-3">
-                                                <input type="last name" placeholder="Last Name" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4"/>
-                                            </div>
+                                            
                                             <div class="form-group mb-3">
                                                 <input id="inputEmail" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" ref={emailRef}/>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <input id="inputEmail" type="number" placeholder="Phone Number" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" ref={phoneNumberRef} />
                                             </div>
                                             <div class="form-group mb-3">
                                                 <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" ref={passwordRef} />

@@ -6,7 +6,6 @@ export const Header = () => {
     const [error, setError] = useState('');
     const { user, logOut } = useAuth();
 
-    console.log(user);
     let history = useHistory();
 
     let handleLogOut = async () => {
