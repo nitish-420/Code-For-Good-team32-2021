@@ -1,28 +1,33 @@
-#title
-{
-    background-color: #86211B
+#title {
+  /* background-color: #86211B */
+  background: radial-gradient(#981d26, #500e10ea);
 }
-.navbar-brand
-{
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: "Inter";
+
+.bg-logo {
+  background-image: url(../../images/logo-final.png);
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 1;
 }
-.navbar
-{
-    margin: 0px auto 0px auto;
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 1.3rem;
+
+.navbar-brand {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Inter";
 }
-.nav-item
-{
-    margin: 0px 15px 0px 15px;
+.navbar {
+  margin: 0px auto 0px auto;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1.3rem;
 }
-.download
-{
-    font-family: 'Montserrat'; 
-    font-weight: 600;
-    background-color: #393e46;
-    border: 1px solid white;
+.nav-item {
+  margin: 0px 15px 0px 15px;
+}
+.download {
+  font-family: "Montserrat";
+  font-weight: 600;
+  background-color: #393e46;
+  border: 1px solid white;
 }
