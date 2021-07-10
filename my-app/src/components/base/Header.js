@@ -7,8 +7,17 @@ export const Header = () => {
     let history = useHistory();
     let { user } = useAuth();
     let email = '';
+    let userTab = '';
     if (user) {
         email = user.email;
+
+        if (email === "admin32@gmail.com") {
+            userTab = <li class="nav-item"><a class="nav-link" onClick={() => { history.push('/addevent'); }}>Add Event</a></li>
+        } else if (email === "coordinator32@gmail.com") {
+            userTab = <li class="nav-item"><a class="nav-link" onClick={() => { history.push('/reviewform'); }}>Review Form</a></li>
+        } else {
+            userTab = <li class="nav-item"><a class="nav-link" onClick={() => { history.push('/profile'); }}>Profile</a></li>
+        }
     }
 
     return (
@@ -22,7 +31,9 @@ export const Header = () => {
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#footer">Home</a>
+                                <a class="nav-link" onClick={() => {
+                                    history.push('/home');
+                                }}>Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" onClick={() => {

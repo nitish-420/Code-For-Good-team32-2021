@@ -9,6 +9,8 @@ import { Footer } from "./components/base/Footer";
 import { Dashboard } from "./components/profile/Dashboard"
 import { VolunteerForm } from "./components/profile/VolunteerForm"
 import { ReportSubmission } from "./components/profile/ReportSubmission"
+import { AddEvent } from "./components/addevent/AddEvent"
+import { ReviewForm } from "./components/reviewform/ReviewForm"
 
 import {
     BrowserRouter as Router,
@@ -27,6 +29,8 @@ function App() {
                         <Route exact path="/signup" component={SignUp} />
                         <Route exact path="/home" component={Homepage}/>
                         <Route exact path="/events" component={Events} />
+                        <Route exact path="/addevent" component={AddEvent} />
+                        <Route exact path="/reviewform" component={ReviewForm} />
                         <Route exact path={["/profile" , "/profile/dashboard"]} component={Dashboard} />
                         <Route exact path="/profile/VolunteerForm" component={VolunteerForm} />
                         <Route exact path="/profile/ReportSubmission" component={ReportSubmission} />
@@ -39,3 +43,9 @@ function App() {
 }
 
 export default App;
+
+
+/*
+coordinator32@gmail.com is email for coordinator
+admin32@gmail.com is email for admin 
+*/

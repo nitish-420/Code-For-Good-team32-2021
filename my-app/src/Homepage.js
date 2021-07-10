@@ -1,76 +1,95 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import ReactDOM from "react-dom";
 import './Homepage.css'
+import axios from 'axios'
 
 export const Homepage = () => {
+    const [img1 , setImg1] = useState('');
+    const [img2 , setImg2] = useState('');
+    const [img3 , setImg3] = useState('');
+    
+    useEffect(() => {
+        axios.get('/home/events/upcoming')
+            .then((res) => {
+                // console.log("corusel " , res.data[0].images);
+                setImg2(res.data[1].images[0]);
+                setImg1(res.data[0].images[0]);
+                setImg3(res.data[2].images[0]);
+            })
+            .catch(err => console.log(err));
+    }, []);
+
     return (
-        <div class="px-4 p-sm-0 customBg">
-            <div class="hello">
+        <div className="px-4 p-sm-0 customBg">
+            <div className="hello">
             <section id="testimonials">
                 <h1>Upcoming Events</h1>
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-                <div className="carousel-inner">
-                    <div class="carousel-item active">
-                    <img  class="testImg" src="#" alt="img1"></img>
+                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                <div classNameName="carousel-inner">
+                    <div className="carousel-item active">
+                    <img className="testImg img-fluid w-100 h-auto m-0" src={img1} alt="img1"></img>
                     </div>
-                    <div class="carousel-item">
-                    <img  class="testImg" src="#" alt="img2"></img>
+                    <div className="carousel-item">
+                        <img  className="testImg img-fluid w-100 h-auto m-0" src={img2} alt="img2"></img>
+                    </div>
+                    <div className="carousel-item">
+                        <img  className="testImg img-fluid w-100 h-auto m-0" src={img3} alt="img3"></img>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
                 </button>
                 </div>
             </section>
-            <section id="pricing">
+                <section id="pricing" style={{margin: "20px"}}>
                     <h2>Our Top 3 Volunteers of the month</h2>
-                    <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur..</p>
-                    <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card pricing-col">
-                        <div class="card-header"><h3 class="pheader">Name 2</h3></div>
-                        <div class="card-body">
-                            <h2 class="card-title">lorem</h2>
-                            <p class="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p class="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p class="card-text para3">Lorem ipsum dolor sit.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn btn-outline-dark" type="button">Sign Up</button>
+                    <p className="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur..</p>
+                    <div className="row">
+                    <div className="col-lg-4 col-md-6">
+                        <div className="card pricing-col">
+                        <div className="card-header"><h3 className="pheader">Name 2</h3></div>
+                        <div className="card-body">
+                            <h2 className="card-title">lorem</h2>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
+                            <div className="d-grid gap-2">
+                                <button className="btn btn-outline-dark" type="button">Sign Up</button>
                             </div>
                         </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card pricing-col">
-                        <div class="card-header"><h3 class="pheader">Name 1</h3></div>
-                        <div class="card-body">
-                            <h2 class="card-title">lorem</h2>
-                            <p class="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p class="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p class="card-text para3">Lorem ipsum dolor sit.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn btn-dark" type="button">Sign Up</button>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="card pricing-col">
+                        <div className="card-header"><h3 className="pheader">Name 1</h3></div>
+                        <div className="card-body">
+                            <h2 className="card-title">lorem</h2>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
+                            <div className="d-grid gap-2">
+                                <button className="btn btn-dark" type="button">Sign Up</button>
                             </div>
                         </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="card pricing-col">
-                        <div class="card-header"><h3 class="pheader">Name3</h3></div>
-                        <div class="card-body">
-                            <h2 class="card-title">lorem</h2>
-                            <p class="card-text para3">Lorem ipsum dolor sit</p>
-                            <p class="card-text para3">Lorem ipsum dolor sit</p>
-                            <p class="card-text para3">Lorem ipsum dolor sit</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn btn-dark" type="button">Sign Up</button>
+                    <div className="col-lg-4">
+                        <div className="card pricing-col">
+                        <div className="card-header"><h3 className="pheader">Name3</h3></div>
+                        <div className="card-body">
+                            <h2 className="card-title">lorem</h2>
+                            <p className="card-text para3">Lorem ipsum dolor sit</p>
+                            <p className="card-text para3">Lorem ipsum dolor sit</p>
+                            <p className="card-text para3">Lorem ipsum dolor sit</p>
+                            <div className="d-grid gap-2">
+                                <button className="btn btn-dark" type="button">Sign Up</button>
                             </div>
                         </div>
                         </div>
@@ -79,21 +98,21 @@ export const Homepage = () => {
 
                 </section>
                 <section id="features">
-                <div class="row marbot">
-                <div class="col-lg-4 feature1">
-                    <i class="icon fas fa-check-circle fa-4x"></i>
-                    <h3 class="h31">Feature 1.</h3>
-                    <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, magni..</p>
+                <div className="row marbot">
+                <div className="col-lg-4 feature1">
+                    <i className="icon fas fa-check-circle fa-4x"></i>
+                    <h3 className="h31">Feature 1.</h3>
+                    <p className="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, magni..</p>
                 </div>
-                <div  class="col-lg-4 feature1">
-                    <i class="icon fas fa-bullseye fa-4x"></i>
-                    <h3 class="h31">Feature 2.</h3>
-                    <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div  className="col-lg-4 feature1">
+                    <i className="icon fas fa-bullseye fa-4x"></i>
+                    <h3 className="h31">Feature 2.</h3>
+                    <p className="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-                <div  class="col-lg-4 feature1">
-                    <i class="icon fas fa-address-book fa-4x"></i>
-                    <h3 class="h31">Feature 3.</h3>
-                    <p class="para1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, quia.</p>
+                <div  className="col-lg-4 feature1">
+                    <i className="icon fas fa-address-book fa-4x"></i>
+                    <h3 className="h31">Feature 3.</h3>
+                    <p className="para1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, quia.</p>
                 </div>
                 </div>
             </section>

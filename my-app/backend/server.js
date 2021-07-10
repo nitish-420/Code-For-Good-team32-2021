@@ -15,6 +15,7 @@ const upload = multer({ storage });
 
 const User = require('./models/users');
 const Report = require('./models/reports');
+const ReviewReport = require('./models/reviewreports');
 const Event = require('./models/events');
 const UpComingEvent = require('./models/upcomingevents');
 const PastEvent = require('./models/pastevents');
@@ -22,12 +23,12 @@ const PastEvent = require('./models/pastevents');
 
 
 const Admin_id='60e9cc0464e7993a2c944cf1';
-const Coordinate_id=''
+const Coordinate_id='60e9e63a7731ee1083bd6a03';
 
 
 
 app.use(express.urlencoded({ extended: true }));
-
+console.log(process.env.ATLAS_URI);
 mongoose.connect(process.env.ATLAS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -41,14 +42,15 @@ db.once('open', function () {
 
 const { Schema } = mongoose;
 
+
+let upcomingEventArray = ['60ea0c31e75e4739bc8a3163', '60ea0c36e75e4739bc8a3166', '60ea0c37e75e4739bc8a3168']
+
+// ----------- SignUp ----------------
 app.post('/signup', async (req, res) => {
-    console.log(req.body)
+    // email , mobile , username
     const user = new User(req.body);
     await user.save();
 })
-
-let upcomingEventArray = ['', '', '']
-
 
 // ------------------- HOME -------------
 app.get('/home/events/upcoming', async (req, res) => {
@@ -58,75 +60,91 @@ app.get('/home/events/upcoming', async (req, res) => {
 })
 
 // ----------------profile-----------------------------
-app.get('/profile/dashboard', async (req, res) => {
-    const {userId}=req.params;
-    const user=await user.findById(userId);
-    res.send(user);
-})
+// app.get('/profile/dashboard', async (req, res) => {
+//     const {userId}=req.params;
+//     const user=await user.findById(userId);
+//     res.send(user);
+// })
 
-app.post('/profile/personalInfo', async (req, res) => {
-    const {id} = req.params;
-    const user=await User.findById(id);
-    res.send(user);
+// app.post('/profile/personalInfo', async (req, res) => {
+//     const {id} = req.params;
+//     const user=await User.findById(id);
+//     res.send(user);
 
-})
+// })
 
-app.post('/profile/reportSubmission', async (req, res) => {
-    const {reportId}=req.params;
-    const report=await Report.findById(reportId);
-    res.send(report)
-})
-app.post('/profile/personalInfo', async (req, res) => {
-    const {email}=req.params;
-    const report=await Report.findOneAndUpdate({email:email},{...req.body});
+// app.post('/profile/reportSubmission', async (req, res) => {
+//     // user.email
+//     // reportObj
+//     // imageArray
+//     const {reportId}=req.params;
+//     const report=await Report.findById(reportId);
+//     res.send(report)
+// })
+// app.post('/profile/personalInfo', async (req, res) => {
+//     const {email}=req.params;
+//     const report=await Report.findOneAndUpdate({email:email},{...req.body});
     
-})
+// })
 
-// ------------- Events ------------------------------------------------
-app.get('/events/upcoming', async (req, res) => {
-    const events = await UpComingEvent.find({});
-    res.send(events)
-})
+// // ------------- Events ------------------------------------------------
+// app.get('/events/upcoming', async (req, res) => {
+//     const events = await UpComingEvent.find({});
+//     res.send(events)
+// })
 
-app.get('/events/past', async (req, res) => {
-    const events = await PastEvent.find({});
-    res.send(events)
-})
+// app.get('/events/past', async (req, res) => {
+//     const events = await PastEvent.find({});
+//     res.send(events)
+// })
 
-app.post('/event/new', upload.array('image'), async (req, res, next) => {
+// app.post('/event/new', upload.array('image'), async (req, res, next) => {
+//     // eventObj
+//     console.log(req.body);
+//     // const event = new Event(req.body.event);
+//     // event.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
+//     // await event.save();
+//     // upcomingEventArray.shift();
+//     // upcomingEventArray.push(event._id);
 
-    const event = new Event(req.body.event);
-    event.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
-    await event.save();
-    // console.log(campground);
-    // req.flash('success', 'Successfully made a new campground!');
-})
+//     // console.log(campground);
+//     // req.flash('success', 'Successfully made a new campground!');
+// })
 
-app.post('/event/show', async (req, res) => {
-    const { id } = req.params;
-    const event = await Event.findById(id);
-    res.send(event);
-})
+// app.post('/event/show', async (req, res) => {
+//     const { id } = req.params;
+//     const event = await Event.findById(id);
+//     res.send(event);
+// })
 
-app.get('/events/index', async (req, res) => {
-    const events = await Event.find({});
-    res.send(events)
-})
+// app.get('/events/index', async (req, res) => {
+//     const events = await Event.find({});
+//     res.send(events)
+// })
 
-app.get('/event/register',async (req,res)=>{
-    const {email,eventId,joined}=req.params;
-    const user=await User.find({email:email});
-    const event=await Event.findById(eventId);
-    await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
+// app.get('/event/register',async (req,res)=>{
+//     const {email,eventId,joined}=req.params;
+//     const user=await User.find({email:email});
+//     const event=await Event.findById(eventId);
+//     await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
 
-    if(parserInt(joined)===1){
-        await user.updateOne({$pull:{pendingEvents:{event}}})
-    }
-    else{
-        user.pendingEvents.push(event);
-        await user.save();
-    }
-})
+//     if(parserInt(joined)===1){
+//         await user.updateOne({$pull:{pendingEvents:{event}}})
+//     }
+//     else{
+//         user.pendingEvents.push(event);
+//         await user.save();
+//     }
+// })
+
+
+// // ----------------review report---------------------
+
+// app.get('/review/reports',async (req,res)=>{
+//     const reviews=await  ReviewReport.findById(Coordinate_id);
+//     res.send(reviews);
+// })
+
 
 
 // here starts server work

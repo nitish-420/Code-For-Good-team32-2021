@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -6,9 +6,33 @@ import Button from "@material-ui/core/Button";
 import "./ReportSubmission.css";
 import { useHistory } from 'react-router-dom';
 import { ProfileHeader } from './ProfileHeader'
+import { useAuth } from '../../context/AuthContext'
+import axios from 'axios';
 
 export const ReportSubmission = () => {
     let history = useHistory();
+    let { user } = useAuth();
+
+    const [reportObj, setReportObj] = useState();
+    const [imageArray, setImageArray] = useState([]);
+
+    let handleChange = (e) => {
+        let { name, value } = e.target;
+        setReportObj({
+            ...reportObj, [name]: value
+        })
+    }
+
+    let handleSubmit = () => {
+        // user.email
+        // reportObj
+        // imageArray
+
+        axios.post('/profile/reportSubmission', { reportObj: reportObj, imageArray: imageArray, email: user.email })
+            .then()
+            .catch(err => console.log(err));
+        
+    }
 
     return (
         <>
@@ -20,70 +44,28 @@ export const ReportSubmission = () => {
                         Report Submission Form
                     </Typography>
                     <Grid className="fields" container spacing={2}>
-                        {/* <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            variant="outlined"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            variant="outlined"
-            fullWidth
-            autoComplete="family-name"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="email"
-            name="Email"
-            variant="outlined"
-            label="Email Adresss"
-            fullWidth
-            autoComplete="email"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="phonenumber"
-            name="PhoneNumber"
-            variant="outlined"
-            label="Phone Number"
-            fullWidth
-            autoComplete="phone number"
-          />
-        </Grid> */}
                         <Grid item xs={12}>
                             <TextField
                                 required
                                 id="event name"
-                                name="Event Name"
+                                name="title"
                                 type={Date}
                                 variant="outlined"
                                 label="Event Name"
                                 fullWidth
                                 autoComplete="event-name"
+                                onChange={(e) => handleChange(e)}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 required
                                 id="hours"
-                                name="Hours"
+                                name="duration"
                                 variant="outlined"
                                 label="Hours"
                                 fullWidth
+                                onChange={(e) => handleChange(e)}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -95,6 +77,7 @@ export const ReportSubmission = () => {
                                 variant="outlined"
                                 fullWidth
                                 autoComplete="given-name"
+                                onChange={(e) => handleChange(e)}
                             />
                         </Grid>
                         <div className="buttonUpload">
@@ -103,8 +86,15 @@ export const ReportSubmission = () => {
                                     <input
                                         style={{ display: "none" }}
                                         id="upload-photo"
-                                        name="upload-photo"
+                                        name="images"
                                         type="file"
+                                        multiple
+                                        onChange={(e) => {
+                                            if (e.target) {
+                                            setImageArray(e.target.files);
+                                            console.log(imageArray);
+                                            }
+                                        }}
                                     />
 
                                     <Button color="secondary" variant="outlined" component="span">
@@ -121,7 +111,7 @@ export const ReportSubmission = () => {
                                     sm={6}
                                     variant="contained"
                                     color="secondary"
-                                    href="#outlined-buttons"
+                                    onClick={() => { handleSubmit()}}
                                 >
                                     Submit
                                 </Button>
