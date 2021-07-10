@@ -4,11 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'
 import './Dashboard.css'
-<<<<<<< Updated upstream:my-app/src/components/profile/Dashboard.js
 import { ProfileHeader } from './ProfileHeader'
-=======
 // import yng from 'my-app/src/images/youngistan.png'
->>>>>>> Stashed changes:my-app/src/components/Dashboard.js
 
 export const Dashboard = () => {
     const emailRef = useRef();
@@ -54,7 +51,7 @@ export const Dashboard = () => {
                         <div className="d-flex align-items-center justify-content-between mb-3 heads">
                             <h5 className="mb-0 ">Registered Events</h5>
                         </div>
-                        <div className="p-4 rounded shadow-sm bg-light">
+                        <div className="p-4 rounded shadow-sm bg-light regeve">
                             <ul className="nobull">
                                 <li className="listele font-italic mb-0">
                                     <span className="left"><a href="#">Event Name</a></span>
@@ -73,7 +70,7 @@ export const Dashboard = () => {
                     </div>
                     <div className="py-4 px-4">
                         <div className="d-flex align-items-center justify-content-between mb-3 heads">
-                            <h5 className="mb-0 ">Work History</h5><a href="#" class="btn btn-link text-muted">Show all</a>
+                            <h5 className="mb-0 ">Work History</h5><a href="#" class="btn-link text-muted">Show all</a>
                         </div>
                         <div className="row">
                         <div className="card mb-3 col-md-6">

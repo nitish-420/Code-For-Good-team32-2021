@@ -10,7 +10,7 @@ import { Footer } from "./components/base/Footer";
 import { Dashboard } from "./components/profile/Dashboard"
 import { VolunteerForm } from "./components/profile/VolunteerForm"
 import { ReportSubmission } from "./components/profile/ReportSubmission"
-import { EventRegister } from "./components/forms/EventRegister"
+import { EventRegister } from "./components/profile/EventRegister"
 
 import {
     BrowserRouter as Router,

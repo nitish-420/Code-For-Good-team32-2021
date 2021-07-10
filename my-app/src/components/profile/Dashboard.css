@@ -1,6 +1,6 @@
 body {
   font-size: 18px;
-  background-image: url(../images/youngistan.png);
+  background-image: url(../../images/youngistan.png);
 }
 
 .carousel-item {
@@ -147,15 +147,172 @@ body {
   border: 1px solid #86211b;
 }
 
-@media (min-width: 544px) and (max-width: 768px) {
+@media (min-width: 370px) and (max-width: 430px) {
+  .display-4 {
+    margin-left: 20%;
+  }
+  .my-img {
+    margin-left: 17%;
+    height: 100px;
+    width: 100px;
+  }
+  .edits {
+    margin-left: 15%;
+    width: 80%;
+  }
+  .text-white-prof {
+    margin-left: 20%;
+  }
+  .heads {
+    padding: 30px 10px;
+  }
+  .regeve {
+    padding: 0 !important;
+  }
+  .nobull {
+    padding: 0 !important;
+  }
+  .card {
+    padding: 0;
+    height: 400px;
+  }
+  .card-img-top {
+    height: 150px;
+  }
+  .card-title {
+    font-size: small;
+  }
+  .card-text {
+    font-size: small;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 470px) {
+  .display-4 {
+    margin-left: 20%;
+  }
+  .my-img {
+    margin-left: 15%;
+    height: 150px;
+    width: 150px;
+  }
+  .edits {
+    margin-left: 18%;
+    width: 78%;
+  }
+  .text-white-prof {
+    margin-left: 30%;
+  }
+}
+
+@media (min-width: 470px) and (max-width: 570px) {
+  .display-4 {
+    margin-left: 20%;
+  }
+  .my-img {
+    margin-left: 15%;
+    height: 180px;
+    width: 180px;
+  }
+  .edits {
+    margin-left: 18%;
+    width: 75%;
+  }
+  .text-white-prof {
+    margin-left: 30%;
+  }
+}
+
+@media (min-width: 570px) and (max-width: 600px) {
+  .display-4 {
+    margin-left: 28%;
+  }
+  .my-img {
+    margin-left: 19%;
+  }
+  .edits {
+    margin-left: 18%;
+    width: 75%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 700px) {
+  .display-4 {
+    margin-left: 28%;
+  }
+  .my-img {
+    margin-left: 25%;
+  }
+  .edits {
+    margin-left: 25%;
+    width: 65%;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 768px) {
   .display-4 {
     margin-left: 33%;
   }
+  .my-img {
+    margin-left: 32%;
+  }
+  .edits {
+    margin-left: 32%;
+    width: 56%;
+  }
 }
-@media (min-width: 1100px) and (max-width: 1220px) {
+@media (min-width: 768px) and (max-width: 800px) {
+  .display-4 {
+    margin-left: 33%;
+  }
+  .my-img {
+    margin-left: 33%;
+  }
+  .edits {
+    margin-left: 32%;
+    width: 50%;
+  }
+}
+@media (min-width: 800px) and (max-width: 940px) {
+  .edits {
+    margin-left: 35%;
+    width: 45%;
+  }
+  .my-img {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 940px) and (max-width: 992px) {
+  .edits {
+    margin-left: 35%;
+    width: 40%;
+  }
+  .my-img {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1110px) {
+  .edits {
+    margin-left: 35%;
+    width: 35%;
+  }
+  .my-img {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 1110px) and (max-width: 1190px) {
+  .edits {
+    margin-left: 35%;
+    width: 32%;
+  }
+  .my-img {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 1190px) and (max-width: 1220px) {
   .edits {
     margin-left: 40%;
-    width: 29%;
+    width: 30%;
   }
 }
 @media (min-width: 1220px) and (max-width: 1300px) {
