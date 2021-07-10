@@ -47,3 +47,5 @@ module.exports = {
 </form>
 
 */
+
+// await cloudinary.uploader.destroy(filename) // will use this when deleting images.

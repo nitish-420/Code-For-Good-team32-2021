@@ -2,8 +2,9 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../../context/AuthContext'
 import './Dashboard.css'
+import { ProfileHeader } from './ProfileHeader'
 
 export const Dashboard = () => {
     const emailRef = useRef();
@@ -15,9 +16,7 @@ export const Dashboard = () => {
 
     return (
         <div className="px-4 p-sm-0 customBg">
-
-            {/* Dashboard */}
-
+            <ProfileHeader />
             <div className="maincontainer">
                 <div className="container-fluid">
                     <div className="row innerrow bg-white shadow rounded overflow-hidden">

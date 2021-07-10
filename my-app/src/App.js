@@ -1,13 +1,14 @@
 import './App.css';
 import { AuthProvider } from './context/AuthContext';
 import { Header } from './components/base/Header'
-import { LogIn } from "./components/LogIn";
-import { SignUp } from "./components/SignUp";
+import { LogIn } from "./components/auth/LogIn";
+import { SignUp } from "./components/auth/SignUp";
 import { Homepage } from "./Homepage";
-import { Events } from "./components/Events";
+import { Events } from "./components/events/Events";
 import { Footer } from "./components/base/Footer";
-import { VolunteerForm } from "./components/forms/VolunteerForm"
-import {ReportSubmission} from "./components/forms/ReportSubmission"
+import { Dashboard } from "./components/profile/Dashboard"
+import { VolunteerForm } from "./components/profile/VolunteerForm"
+import { ReportSubmission } from "./components/profile/ReportSubmission"
 
 import {
     BrowserRouter as Router,
@@ -26,9 +27,9 @@ function App() {
                         <Route exact path="/signup" component={SignUp} />
                         <Route exact path="/home" component={Homepage}/>
                         <Route exact path="/events" component={Events} />
-                        <Route exact path="/volunteerform" component={VolunteerForm} />
-                        <Route exact path="/reportsubmissionform" component={ReportSubmission} />
-                        
+                        <Route exact path={["/profile" , "/profile/dashboard"]} component={Dashboard} />
+                        <Route exact path="/profile/VolunteerForm" component={VolunteerForm} />
+                        <Route exact path="/profile/ReportSubmission" component={ReportSubmission} />
                     </Switch>
                     <Footer />
                 </Router>

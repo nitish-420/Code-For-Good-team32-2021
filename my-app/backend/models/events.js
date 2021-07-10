@@ -7,6 +7,10 @@ const EventSchema = new Schema({
     date: {
         type: String
     },
+    title: {
+        type: String,
+        required: true
+    },
     location: {
         type: String,
         required: true
@@ -27,27 +31,15 @@ const EventSchema = new Schema({
         type: [String],
         required: true
     },
-    descriptions: {
+    description: {
         type: String,
         required: true
     },
     joined: {
-        type: Boolean
+        type: Number,
+        default: 0
     }
 });
 
-const upComingEvents = new Schema({
-    upComingEvents: {
-        type:Schema.Types.ObjectId,
-        ref: 'Event'
-    }
-})
-
-const pastEvents = new Schema({
-    pastEvents:{
-        type:Schema.Types.ObjectId,
-        ref:'Event'
-    }
-})
 
 module.exports = mongoose.model('Event', EventSchema);

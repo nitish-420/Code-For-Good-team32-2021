@@ -4,21 +4,11 @@ import { useAuth } from '../../context/AuthContext'
 import './Header.css'
 
 export const Header = () => {
-    const [error, setError] = useState('');
-    const { user, logOut } = useAuth();
-
     let history = useHistory();
-
-    let handleLogOut = async () => {
-
-        if (window.confirm("Are you sure you want to logout ?")) {
-            try {
-                await logOut();
-                history.push("/");
-            } catch (err) {
-                setError(err.message);
-            }
-        }
+    let { user } = useAuth();
+    let email = '';
+    if (user) {
+        email = user.email;
     }
 
     return (
@@ -32,17 +22,28 @@ export const Header = () => {
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a  class="nav-link" href="#footer">Home</a>
+                                <a class="nav-link" href="#footer">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a  class="nav-link" href="#">Events</a>
+                                <a class="nav-link" onClick={() => {
+                                    history.push('/events')
+                                }}>Events</a>
                             </li>
                             <li class="nav-item">
-                            <a  class="nav-link" href="#testimonials">Community</a>
+                                <a class="nav-link" href="#testimonials">Community</a>
                             </li>
-                            <li class="nav-item">
-                            <a  class="nav-link" href="#testimonials">Profile</a>
-                            </li>
+                            {
+                                (email !== "admin32@gmail.com") ? <li class="nav-item">
+                                    <a class="nav-link" onClick={() => {
+                                        history.push('/profile');
+                                    }}>Profile</a>
+                                </li> :
+                                <li class="nav-item">
+                                    <a class="nav-link" onClick={() => {
+                                        history.push('/addEvent');
+                                    }}>Add Event</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </nav>

@@ -3,7 +3,7 @@ import {
     Link
 } from "react-router-dom";
 import { useRef, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import './SignUp.css'
 import axios from 'axios';
@@ -29,7 +29,7 @@ export const SignUp = () => {
         try {
             setError('');
             setLoading(true);
-            // await signUp(emailRef.current.value, passwordRef.current.value)
+            await signUp(emailRef.current.value, passwordRef.current.value)
 
             axios.post('/signup', { email: emailRef.current.value, mobile: phoneNumberRef.current.value, username: fullNameRef.current.value })
                 .then()
@@ -48,7 +48,7 @@ export const SignUp = () => {
                 <div class="row no-gutter">
 
                     <div class="col-md-6 d-none d-md-flex bg-image">
-                        <img src="../../../signup.jpeg" class="img" />
+                        {/* <img src="../../../signup.jpeg" class="img" /> */}
                     </div>
 
                     <div class="col-md-6 bg-light">
