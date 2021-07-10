@@ -5,7 +5,7 @@ import { LogIn } from "./components/LogIn";
 import { SignUp } from "./components/SignUp";
 import { Footer } from "./components/base/Footer"
 import { VolunteerForm } from "./components/forms/VolunteerForm"
-
+import {ReportSubmission} from "./components/forms/ReportSubmission"
 
 import {
     BrowserRouter as Router,
@@ -23,6 +23,8 @@ function App() {
                         <Route exact path={["/", "/login"]} component={LogIn} />
                         <Route exact path="/signup" component={SignUp} />
                         <Route exact path="/volunteerform" component={VolunteerForm} />
+                        <Route exact path="/reportsubmissionform" component={ReportSubmission} />
+                        
                     </Switch>
                     <Footer />
                 </Router>
