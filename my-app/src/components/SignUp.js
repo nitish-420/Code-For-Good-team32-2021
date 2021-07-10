@@ -75,6 +75,9 @@ export const SignUp = () => {
                                             <Link className="mx-2 btn btn-outline-primary" exact to="/login">
                                                 LogIn
                                             </Link>
+                                            <Link className="mx-2 btn btn-outline-primary" exact to="/events">
+                                                Events
+                                            </Link>
                                         </form>
                                     </div>
                                 </div>

@@ -88,6 +88,9 @@ export const LogIn = () => {
             </div> */}
 
             {/* Login  */}
+            
+
+
 
             <div className="maincontainer">
                 <div className="container-fluid">
@@ -124,8 +127,13 @@ export const LogIn = () => {
                                                 <Link className="mx-2 btn btn-outline-primary" exact to="/signup">
                                                     SignUp
                                                 </Link>
+                                                
                                             </form>
+                                            
                                         </div>
+                                        
+                                        
+ 
                                         
                                     </div>
                                 </div>
