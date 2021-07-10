@@ -32,7 +32,7 @@ const EventSchema = new Schema({
         required: true
     },
     joined: {
-        type: String
+        type: Boolean
     }
 });
 
