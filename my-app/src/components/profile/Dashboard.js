@@ -6,6 +6,7 @@ import { useAuth } from '../../context/AuthContext'
 import './Dashboard.css'
 import { ProfileHeader } from './ProfileHeader'
 import axios from 'axios'
+// import yng from 'my-app/src/images/youngistan.png'
 
 export const Dashboard = () => {
     const emailRef = useRef();
@@ -26,16 +27,17 @@ export const Dashboard = () => {
         <div className="px-4 p-sm-0 customBg">
             <ProfileHeader />
             <div className="maincontainer">
-                <div className="container-fluid">
+                {/* <div className="container-fluid"> */}
                     <div className="row innerrow bg-white shadow rounded overflow-hidden">
                     <div className="px-4 pt-0 pb-4 cover">
                         <div className="media align-items-end profile-head">
-                            <div className="profile mr-3"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="130" class="rounded mb-2 img-thumbnail" />
+                            <div className="profile mr-3">
+                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="250" height="250" class="rounded mb-2 img-thumbnail my-img" />
                             <a href="/volunteerform" className="btn btn-outline-dark btn-sm btn-block edits">Edit profile</a>
                             </div>
-                            <div className="media-body mb-5 text-white">
-                                <h4 className="mt-0 mb-0">Sharon</h4>
-                                <p className="small mb-4"> <i className="fas fa-map-marker-alt mr-2"></i>Mumbai</p>
+                            <div className="media-body mb-5 text-white text-white-prof">
+                                <h3>Sharon</h3>
+                                <p className="mb-4"> <i className="fas fa-map-marker-alt mr-2"></i>Mumbai</p>
                             </div>
                         </div>
                     </div>
@@ -56,26 +58,29 @@ export const Dashboard = () => {
                         <div className="d-flex align-items-center justify-content-between mb-3 heads">
                             <h5 className="mb-0 ">Registered Events</h5>
                         </div>
-                        <div className="p-4 rounded shadow-sm bg-light">
+                        <div className="p-4 rounded shadow-sm bg-light regeve">
                             <ul className="nobull">
-                                <li className="listele font-italic mb-0">
-                                    <span className="left"><a href="#">Event Name</a></span>
-                                    <span className="right">Event time</span>
+                                <li className="listele font-italic mb-0 row">
+                                    <span className="left col-sm-4"><a href="#">Event Name</a></span>
+                                    <span className="statis col-sm-4 text-center">Status: In Progress</span>
+                                    <span className="text-right col-sm-4">Event time</span>
                                 </li>
-                                <li className="listele font-italic mb-0">
-                                    <span className="left"><a href="#">Event Name</a></span>
-                                    <span className="right">Event time</span>
+                                <li className="listele font-italic mb-0 row">
+                                    <span className="left col-sm-4"><a href="#">Event Name</a></span>
+                                    <span className="statis col-sm-4 text-center">Status: In Progress</span>
+                                    <span className="text-right col-sm-4">Event time</span>
                                 </li>
-                                <li className="listele font-italic mb-0">
-                                    <span className="left"><a href="#">Event Name</a></span>
-                                    <span className="right">Event time</span>
+                                <li className="listele font-italic mb-0 row">
+                                    <span className="left col-sm-4"><a href="#">Event Name</a></span>
+                                    <span className="statis col-sm-4 text-center">Status: In Progress</span>
+                                    <span className="text-right col-sm-4">Event time</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="py-4 px-4">
                         <div className="d-flex align-items-center justify-content-between mb-3 heads">
-                            <h5 className="mb-0 ">Work History</h5><a href="#" class="btn btn-link text-muted">Show all</a>
+                            <h5 className="mb-0 ">Work History</h5><a href="#" class="btn-link text-muted">Show all</a>
                         </div>
                         <div className="row">
                         <div className="card mb-3 col-md-6">
@@ -151,7 +156,7 @@ export const Dashboard = () => {
                         </div>
                     </div>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </div>
     );

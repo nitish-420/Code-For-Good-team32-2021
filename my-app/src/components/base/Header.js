@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'
 import './Header.css'
+import logo from '../../images/logo-final.png'; 
 
 export const Header = () => {
     let history = useHistory();
@@ -24,7 +25,9 @@ export const Header = () => {
         <section id="title">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-md navbar-dark">
-                    <a class="navbar-brand" href="#">logo</a>
+                    <a class="navbar-brand" href="#">
+                        <img src={logo} alt="Logo" height="80px"/>
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

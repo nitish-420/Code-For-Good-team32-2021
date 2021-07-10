@@ -5,6 +5,7 @@ import { LogIn } from "./components/auth/LogIn";
 import { SignUp } from "./components/auth/SignUp";
 import { Homepage } from "./Homepage";
 import { Events } from "./components/events/Events";
+import { EventInfo } from "./components/events/EventsInfo";
 import { Footer } from "./components/base/Footer";
 import { Dashboard } from "./components/profile/Dashboard"
 import { VolunteerForm } from "./components/profile/VolunteerForm"
@@ -32,8 +33,10 @@ function App() {
                         <Route exact path="/addevent" component={AddEvent} />
                         <Route exact path="/reviewform" component={ReviewForm} />
                         <Route exact path={["/profile" , "/profile/dashboard"]} component={Dashboard} />
-                        <Route exact path="/profile/VolunteerForm" component={VolunteerForm} />
-                        <Route exact path="/profile/ReportSubmission" component={ReportSubmission} />
+                        <Route exact path="/eventsinfo" component={EventInfo} />
+                        <Route exact path="/volunteerform" component={VolunteerForm} />
+                        <Route exact path="/eventregister" component={EventRegister} />
+                        <Route exact path="/reportsubmissionform" component={ReportSubmission} />
                     </Switch>
                     <Footer />
                 </Router>

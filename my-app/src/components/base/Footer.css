@@ -1,19 +1,15 @@
-.head
-{
-    background-color: #86211B
+.head {
+  background: radial-gradient(#981d26, #500e10ea);
+  /* background-color: #86211B */
 }
-.foot
-{
-    background-color: #58100c;
+.foot {
+  background-color: #58100c;
 }
-.col-md-2 h6
-{
-    margin-bottom: 10px;
+.col-md-2 h6 {
+  margin-bottom: 10px;
 }
-@media(max-width: 767px)
-{
-    .col-md-2 .padbot
-    {
-        margin-bottom: 50px;
-    }
+@media (max-width: 767px) {
+  .col-md-2 .padbot {
+    margin-bottom: 50px;
+  }
 }
