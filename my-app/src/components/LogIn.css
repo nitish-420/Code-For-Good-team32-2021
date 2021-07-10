@@ -1,0 +1,81 @@
+.login,
+.image {
+  min-height: 80vh;
+}
+.bg-image {
+  background-image: url("https://therichpost.com/wp-content/uploads/2021/02/login-split.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+.maincontainer {
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+}
+.display-4 {
+  margin-left: 25%;
+  margin-bottom: 10%;
+}
+
+.cs-label {
+  font-weight: bold;
+}
+
+.forgot-password {
+  margin-top: 8%;
+}
+
+.or-but {
+  margin-left: 45%;
+  margin-top: 8%;
+}
+
+.my-btn {
+  background-color: white;
+  text-align: left;
+  color: black;
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 1px 2px;
+  cursor: pointer;
+  font-size: 19px;
+  margin: 5px;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  padding: 0px 10px;
+  user-select: none;
+  height: 50px;
+  border: 0px;
+  margin-top: 10px;
+}
+
+.my-btn:hover {
+  background-color: #f0f4ec;
+}
+
+.loginmob {
+  margin-left: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .display-4 {
+    margin-left: 16%;
+  }
+  /* .my-btn {
+    text-align: center;
+  } */
+  .loginmob {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 544px) and (max-width: 768px) {
+  .display-4 {
+    margin-left: 33%;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}

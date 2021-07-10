@@ -1,0 +1,21 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center center;
+}
+
+.img {
+    width: inherit;
+    height: inherit;
+}
+
+.bg-color {
+    background-color: #f8f9fa!important
+}
+.bg-color-signup {
+    background-color: blue
+}
