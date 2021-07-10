@@ -10,6 +10,7 @@ export const Footer = () => {
                     {/* <!-- Grid container --> */}
                     <div className="container">
                         {/* <!-- Section: Links --> */}
+<<<<<<< Updated upstream
                         <section className="mt-5">
                             {/* <!-- Grid row--> */}
                             <div className="row text-center d-flex justify-content-center pt-5">
@@ -20,6 +21,18 @@ export const Footer = () => {
                                     </h6>
                                 </div>
                                 {/* <!-- Grid column --> */}
+=======
+                        <section>
+                            {/* <!-- Grid row--> */}
+                            <div class="row text-center d-flex justify-content-center pt-2">
+                            {/* <!-- Grid column --> */}
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold padbot">
+                                <a href="#!" class="text-white">About us</a>
+                                </h6>
+                            </div>
+                            {/* <!-- Grid column --> */}
+>>>>>>> Stashed changes
 
                                 {/* <!-- Grid column --> */}
                                 <div className="col-md-2">
@@ -53,6 +66,7 @@ export const Footer = () => {
                                 </div>
                             </div>
                         </section>
+<<<<<<< Updated upstream
                         <hr className="my-5" />
 
                         <section className="mb-5">
@@ -70,6 +84,25 @@ export const Footer = () => {
                         <section className="text-center mb-5">
                             <a href="" className="text-white me-4">
                                 <i className="fab fa-facebook-f"></i>
+=======
+                        <hr class="my-3" />
+
+                        <section class="mb-3">
+                            <div class="row d-flex justify-content-center">
+                            <div class="col-lg-8">
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                                distinctio earum repellat quaerat voluptatibus placeat nam,
+                                commodi optio pariatur est quia magnam eum harum corrupti
+                                dicta, aliquam sequi voluptate quas.
+                                </p>
+                            </div>
+                            </div>
+                        </section>
+                        <section class="text-center">
+                            <a href="" class="text-white me-4">
+                            <i class="fab fa-facebook-f"></i>
+>>>>>>> Stashed changes
                             </a>
                             <a href="" className="text-white me-4">
                                 <i className="fab fa-twitter"></i>
@@ -91,12 +124,21 @@ export const Footer = () => {
                     </div>
 
 
+<<<<<<< Updated upstream
                     {/* <!-- Copyright --> */}
                     <div className="text-center p-3 foot">
                         © 2020 Copyright:
                         <a className="text-white" href="https://mdbootstrap.com/"
                         >MDBootstrap.com</a
                         >
+=======
+                        {/* <!-- Copyright --> */}
+                        <div class="text-center p-3 foot">
+                        © 2021 Copyright:
+                        <a class="text-white" href="https://mdbootstrap.com/">Youngistaan Foundation</a>
+                        </div>
+                    </footer>
+>>>>>>> Stashed changes
                     </div>
                 </footer>
             </div>
