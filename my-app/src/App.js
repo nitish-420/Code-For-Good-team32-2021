@@ -5,6 +5,7 @@ import { LogIn } from "./components/LogIn";
 import { SignUp } from "./components/SignUp";
 import { Homepage } from "./Homepage";
 import { Events } from "./components/Events";
+import { Dashboard } from "./components/Dashboard";
 import { Footer } from "./components/base/Footer";
 import { VolunteerForm } from "./components/forms/VolunteerForm"
 import {ReportSubmission} from "./components/forms/ReportSubmission"
@@ -28,7 +29,7 @@ function App() {
                         <Route exact path="/events" component={Events} />
                         <Route exact path="/volunteerform" component={VolunteerForm} />
                         <Route exact path="/reportsubmissionform" component={ReportSubmission} />
-                        
+                        <Route exact path="/dashboard" component={Dashboard} />
                     </Switch>
                     <Footer />
                 </Router>
