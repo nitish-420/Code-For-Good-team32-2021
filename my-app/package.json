@@ -4,8 +4,15 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.1",
+<<<<<<< HEAD
     "@material-ui/lab": "^4.0.0-alpha.60",
+||||||| eb33a98
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> e4159b26f46adcd598fb7f2f1d5425a700e23471
     "@material-ui/styles": "^4.11.4",
+>>>>>>> d6c06f941db715b4ec6db9289dd1ee2360c07bb7
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -19,7 +26,12 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
+<<<<<<< HEAD
     "styled-components": "^5.3.0",
+||||||| eb33a98
+=======
+    "semantic-ui-react": "^2.0.3",
+>>>>>>> e4159b26f46adcd598fb7f2f1d5425a700e23471
     "web-vitals": "^1.1.2"
   },
   "scripts": {
