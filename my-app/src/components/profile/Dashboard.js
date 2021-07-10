@@ -53,17 +53,20 @@ export const Dashboard = () => {
                         </div>
                         <div className="p-4 rounded shadow-sm bg-light regeve">
                             <ul className="nobull">
-                                <li className="listele font-italic mb-0">
-                                    <span className="left"><a href="#">Event Name</a></span>
-                                    <span className="right">Event time</span>
+                                <li className="listele font-italic mb-0 row">
+                                    <span className="left col-sm-4"><a href="#">Event Name</a></span>
+                                    <span className="statis col-sm-4 text-center">Status: In Progress</span>
+                                    <span className="text-right col-sm-4">Event time</span>
                                 </li>
-                                <li className="listele font-italic mb-0">
-                                    <span className="left"><a href="#">Event Name</a></span>
-                                    <span className="right">Event time</span>
+                                <li className="listele font-italic mb-0 row">
+                                    <span className="left col-sm-4"><a href="#">Event Name</a></span>
+                                    <span className="statis col-sm-4 text-center">Status: In Progress</span>
+                                    <span className="text-right col-sm-4">Event time</span>
                                 </li>
-                                <li className="listele font-italic mb-0">
-                                    <span className="left"><a href="#">Event Name</a></span>
-                                    <span className="right">Event time</span>
+                                <li className="listele font-italic mb-0 row">
+                                    <span className="left col-sm-4"><a href="#">Event Name</a></span>
+                                    <span className="statis col-sm-4 text-center">Status: In Progress</span>
+                                    <span className="text-right col-sm-4">Event time</span>
                                 </li>
                             </ul>
                         </div>

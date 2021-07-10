@@ -59,10 +59,8 @@ export const Footer = () => {
                             <div class="row d-flex justify-content-center">
                             <div class="col-lg-8">
                                 <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                                distinctio earum repellat quaerat voluptatibus placeat nam,
-                                commodi optio pariatur est quia magnam eum harum corrupti
-                                dicta, aliquam sequi voluptate quas.
+                                Youngistaan, synonymous to the land of young people, is inspired by a bustling crowd of around 356 million young people of India. The potential of our young people is to create a better future to makes India a land of opportunity and good change. We, at Youngistaan Foundation which is based in Hyderabad, are fuelled by the desire to change the world by touching lives one at a time.
+<br/>Join us with this cause on our social media and by volunteering on our page.
                                 </p>
                             </div>
                             </div>
