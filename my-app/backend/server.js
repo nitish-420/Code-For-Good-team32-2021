@@ -21,5 +21,10 @@ db.once('open', function () {
 
 const { Schema } = mongoose;
 
+app.post('/abc', (req, res) => {
+    console.log(req.body);
+    console.log("OKOK");
+})
+
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log('server running..'));

@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'
 import './LogIn.css'
+import axios from 'axios'
 // import { GoogleLoginButton  } from "react-social-login-buttons";
 
 export const LogIn = () => {
@@ -22,8 +23,13 @@ export const LogIn = () => {
             setError('');
             setLoading(true);
             console.log(emailRef.current.value, passwordRef.current.value);
-
+            
             await logIn(emailRef.current.value, passwordRef.current.value);
+
+            axios.post('/abc', { abc: "abc" })
+                .then()
+                .catch(err => console.log(err));
+            
         } catch (err) {
             setError(err.message);
         }
