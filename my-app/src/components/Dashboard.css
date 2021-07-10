@@ -1,0 +1,129 @@
+body {
+  font-size: 18px;
+}
+
+.innerrow {
+  margin-top: 30px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 1px 2px;
+  padding: 30px;
+}
+
+.spac {
+  margin-left: 10px;
+}
+
+.profile-head {
+  margin-left: 45%;
+  display: block;
+}
+
+.heads {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #86211b;
+  color: white;
+}
+
+body {
+  background-color: rgb(235, 231, 231);
+}
+
+.maincontainer {
+  background-color: white;
+}
+
+.flexes {
+  display: flex;
+  /* border: 1px solid black; */
+  /* box-shadow: rgb(0 0 0 / 50%) 0px 1px 2px; */
+  padding-top: 5px;
+}
+
+.cover {
+  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.edits {
+  color: white;
+  width: 20%;
+}
+
+.text-white {
+  margin-left: 4%;
+}
+
+.profile {
+  margin-top: 30px;
+}
+
+.left {
+  text-align: left;
+  font-weight: bold;
+}
+.right {
+  float: right;
+}
+
+.nobull {
+  list-style-type: none;
+}
+
+.listele {
+  padding: 10px;
+  /* background-color: #f1f1f1; */
+  margin: 10px;
+}
+
+.listele a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #86211b;
+}
+
+.listele a:hover {
+  color: #444;
+}
+
+.card-img-top {
+  height: 400px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hert {
+  margin-right: 15px;
+}
+
+.hert:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.cmt:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.vmore {
+  width: 40%;
+  margin: 0 auto;
+  background-color: #8a221b;
+  color: white;
+}
+
+.vmore:hover {
+  background-color: white;
+  color: #86211b;
+  border: 1px solid #86211b;
+}

@@ -51,6 +51,53 @@ export const LogIn = () => {
 
     return (
         <div className="px-4 p-sm-0 customBg">
+            {/* <div className="container-fluid d-grid">
+                <div className="row justify-content-center align-items-center p-0">
+                    <div className="col-12 col-sm-6 col-md-5 form-container" id="login-box">
+                        <div className="m-0 p-1 border-bottom fs-4 text-light bg-dark" id="text">
+                            Login to Code For Good
+                        </div>
+                        <form id="forms">
+                            {
+                                (error) ? <div className="alert alert-danger" role="alert">{error}</div> : ''
+
+                            }
+                            <div className="mb-3">
+                                <label className="form-label">Email address</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Password</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    required
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
+                            <button disabled={loading} onClick={(e) => handleSubmit(e)} className="btn btn-primary">
+                                LogIn
+                            </button>
+                            <Link className="mx-2 btn btn-outline-primary" exact to="/signup">
+                                SignUp
+                            </Link>
+                        </form>
+                    </div>
+                </div>
+            </div> */}
+
+            {/* Login  */}
+            
+
+
+
             <div className="maincontainer">
                 <div className="container-fluid">
                     <div className="row no-gutter">
@@ -86,8 +133,13 @@ export const LogIn = () => {
                                                 <Link className="mx-2 btn btn-outline-primary" exact to="/signup">
                                                     SignUp
                                                 </Link>
+                                                
                                             </form>
+                                            
                                         </div>
+                                        
+                                        
+ 
                                         
                                     </div>
                                 </div>
