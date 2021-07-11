@@ -1,27 +1,39 @@
-.form{
-    font-size: 10%;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 1%;
-    padding-bottom: 1%;
+.form {
+  font-size: 10%;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
-.fields{
-    padding-left: 20%;
-    padding-right: 20%;
+.fields {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
-.button{
-    align-items: center;
-    padding-left: 45%;
+.button {
+  align-items: center;
+  padding-left: 45%;
 }
 
-.container{
-    padding: 20px;
-    border: 1px solid;
-    padding-bottom: 40px;
+.container {
+  padding: 20px;
+  /* border: 1px solid; */
+  padding-bottom: 40px;
 }
 
-.buttonUpload{
-    padding-left: 39%;
+.MuiButton-outlinedSecondary {
+  background-color: #86211b !important;
+  color: white !important;
+}
+
+.MuiButton-outlinedSecondary:hover {
+  background-color: white !important;
+  color: #86211b !important;
+  border: 1px solid #86211b;
+}
+
+.buttonUpload {
+  padding-left: 39%;
+  /* background-color: #86211b; */
 }

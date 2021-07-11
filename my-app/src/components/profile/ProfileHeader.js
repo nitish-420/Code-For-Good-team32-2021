@@ -21,24 +21,18 @@ export const ProfileHeader = () => {
 
     return (
         <>
-            <div class="container-fluid bg-light d-flex flex-wrap">
-                <button className="btn" onClick={() => {
+            <div class="container-fluid dashblock bg-light d-flex flex-wrap">
+                <button className="btn text-white" onClick={() => {
                     history.push('/profile/dashboard')
                 }}>
                     Dashboard
                 </button>
-                <span classsName="mx-1 fw-bolder" style={{ fontSize: "25px" }}>
-                    /
-                </span>
-                <button className="btn" onClick={() => {
+                <button className="btn text-white" onClick={() => {
                     history.push('/profile/VolunteerForm')
                 }}>
                     Volunteer Form
                 </button>
-                <span classsName="mx-1 fw-bolder" style={{ fontSize: "25px" }}>
-                    /
-                </span>
-                <button className="btn" onClick={() => {
+                <button className="btn text-white" onClick={() => {
                     history.push('/profile/ReportSubmission')
                 }}>
                     Report Submission

@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 export const VolunteerCard = () => {
     return (
         <div className="px-4 p-sm-0 customBg">
             <div className="maincontainer">
-                <div className="container-fluid">
+                {/* <div className="container-fluid"> */}
                     <div className="row innerrow bg-white shadow rounded overflow-hidden">
                         {/* <div className=""> */}
                         <div
@@ -84,11 +85,13 @@ export const VolunteerCard = () => {
                                 </div>
                             </div>
                         </section>
-                        <Button variant="contained" class="btn">
+                        <Link to="/reviewform">
+                            <Button variant="contained" class="btn">
                             Go Back
-                        </Button>
+                            </Button>
+                        </Link>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </div>
     );

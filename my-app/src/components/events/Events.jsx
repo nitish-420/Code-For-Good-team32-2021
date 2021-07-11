@@ -29,6 +29,7 @@ export const Events = () => {
                         return <EventHelper eventObj={e}/>
                     }) : "No Upcoming Events"
                 }
+                
             </div>
             <div className="m-2">
                 <div className="fs-2">Past Events</div>

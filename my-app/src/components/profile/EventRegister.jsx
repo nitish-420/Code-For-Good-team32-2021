@@ -7,7 +7,7 @@ import "./EventRegister.css";
 
 export const EventRegister = () => {
   return (
-    <div className="container">
+    <div className="container-form" style={{backgroundColor:"white"}}>
       <React.Fragment>
         <Typography className="form" variant="h6" gutterBottom>
           Event Registration Form

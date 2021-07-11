@@ -42,7 +42,7 @@ export const VolunteerForm = () => {
     return (
         <>
             <ProfileHeader />
-            <div className="container">
+            <div className="container-form">
                 {/* <div className="border">
         </div> */}
                 <React.Fragment>

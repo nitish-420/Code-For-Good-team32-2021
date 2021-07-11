@@ -43,7 +43,7 @@ export const ReportSubmission = () => {
     return (
         <>
             <ProfileHeader />
-            <div className="container">
+            <div className="container-form">
 
                 <React.Fragment>
                     <Typography className="form" variant="h6" gutterBottom>

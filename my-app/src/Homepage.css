@@ -1,108 +1,102 @@
 /*varousel*/
-#testimonials
-{
-    padding-top: 40px;
-    margin-top: 80px;
-    background-color: #86211B;
-    text-align: center;
-    color: #fff;
+#testimonials {
+  padding-top: 40px !important;
+  /* margin-top: 80px; */
+  /* background-color: #86211b; */
+  text-align: center;
+  color: #fff;
 }
-h2
-{
-    font-family: "Inter";
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 1.5;
+.testimonials1 {
+  padding: 40px 0;
+  margin-top: 2% !important;
+  background-color: #86211b;
+  text-align: center;
+  color: #fff;
 }
-.carousel-item
-{
-    padding: 7% 15%;
+h2 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+.carousel-item {
+  padding: 7% 15%;
 }
 /*VOM*/
-#features
-{
-    background-color: #86211B;
-    padding: 7% 15%;
-    text-align: center;
-    /* margin-top: 43.5rem; */
+#features {
+  background-color: #86211b;
+  padding: 7% 15%;
+  text-align: center;
+  /* margin-top: 43.5rem; */
 }
 /*.second_row
 {
     text-align: center;
     margin: 100px auto 40px auto;
 }*/
-.para1
-{
-    width: 70%;
-    margin: 0px auto;
-    line-height: 1.7;
-    font-family: "Inter";
-    font-weight: 300;
-    color:white;
+.para1 {
+  width: 70%;
+  margin: 0px auto;
+  line-height: 1.7;
+  font-family: "Inter";
+  font-weight: 300;
+  color: white;
 }
-.marbot
-{
-    margin-bottom: 30px;
+.marbot {
+  margin-bottom: 30px;
 }
-.feature1
-{
-    margin: 85px 0px 50px 0px;
+.feature1 {
+  margin: 85px 0px 50px 0px;
 }
-.h31
-{
-    font-family: "Inter";
-    font-weight: 800;
-    color: white;
+.h31 {
+  font-family: "Inter";
+  font-weight: 800;
+  color: white;
 }
-.icon
-{
-    color: white; 
-    margin-bottom: 1rem;
+.icon {
+  color: white;
+  margin-bottom: 1rem;
 }
-.icon:hover
-{
-    color: white;
+.icon:hover {
+  color: white;
 }
 /*Employee of month*/
-#pricing
-{
-    text-align: center;
-    padding: 7% 15%;
-    background-color: #EEEE;
+#pricing {
+  text-align: center;
+  padding: 7% 15%;
+  background-color: #eeee;
+  margin-top: 40em !important;
 }
-.para2
-{
-    width: 70%;
-    margin: 0px auto;
-    line-height: 1.7;
-    font-family: "Inter";
-    color: black;
-    margin-bottom: 100px;
+.para2 {
+  width: 70%;
+  margin: 0px auto;
+  line-height: 1.7;
+  font-family: "Inter";
+  color: black;
+  margin-bottom: 100px;
 }
-.pheader
-{
-    font-family: "Inter";
-    font-weight: 700;
+.pheader {
+  font-family: "Inter";
+  font-weight: 700;
 }
-.para3
-{
-    margin: 15px auto;
-    line-height: 1.7;
-    font-family: "Inter";
-    font-weight: 300;
-    font-size: 15px;
+.para3 {
+  margin: 15px auto;
+  line-height: 1.7;
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 15px;
 }
- .pricing-col
-{
-    margin: 0px auto 80px auto;
-    width: 18rem;
-
+.pricing-col {
+  margin: 0px auto 80px auto;
+  width: 18rem;
 }
-.card-header
-{
-    text-align: center;
+.card-header {
+  text-align: center;
 }
-.card-body
-{
-    text-align: center;
+.card-body {
+  text-align: center;
+}
+body {
+  font-size: 18px;
+  background-image: url(../src/images/youngistan.png) !important;
 }

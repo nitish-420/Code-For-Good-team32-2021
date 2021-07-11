@@ -21,18 +21,18 @@ export const Homepage = () => {
     return (
         <div className="px-4 p-sm-0 customBg">
             <div className="hello">
+            <div className="text-center testimonials1 fw-bolder fs-1 mt-0">Upcoming Events</div>
             <section id="testimonials">
-                <h1>Upcoming Events</h1>
                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
                 <div classNameName="carousel-inner">
                     <div className="carousel-item active">
-                    <img className="testImg img-fluid w-100 h-auto m-0" src={img1} alt="img1"></img>
+                    <img className="testImg img-fluid w-auto m-0" src={img1} alt="img1" style={{height:"500px"}}></img>
                     </div>
                     <div className="carousel-item">
-                        <img  className="testImg img-fluid w-100 h-auto m-0" src={img2} alt="img2"></img>
+                        <img  className="testImg img-fluid w-auto m-0" src={img2} alt="img2" style={{height:"500px"}}></img>
                     </div>
                     <div className="carousel-item">
-                        <img  className="testImg img-fluid w-100 h-auto m-0" src={img3} alt="img3"></img>
+                        <img  className="testImg img-fluid w-auto m-0" src={img3} alt="img3" style={{height:"500px"}}></img>
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -51,70 +51,37 @@ export const Homepage = () => {
                     <div className="row">
                     <div className="col-lg-4 col-md-6">
                         <div className="card pricing-col">
-                        <div className="card-header"><h3 className="pheader">Name 2</h3></div>
+                        <div className="card-header"><h3 className="pheader">Nick</h3></div>
                         <div className="card-body">
-                            <h2 className="card-title">lorem</h2>
+                            <img className="rounded" src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" style={{height:"100px"}}></img>
+                            {/* <h2 className="card-title">lorem</h2>
                             <p className="card-text para3">Lorem ipsum dolor sit.</p>
                             <p className="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
-                            <div className="d-grid gap-2">
-                                <button className="btn btn-outline-dark" type="button">Sign Up</button>
-                            </div>
+                            <p className="card-text para3">Lorem ipsum dolor sit.</p> */}
                         </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-md-6">
                         <div className="card pricing-col">
-                        <div className="card-header"><h3 className="pheader">Name 1</h3></div>
+                        <div className="card-header"><h3 className="pheader">John</h3></div>
                         <div className="card-body">
-                            <h2 className="card-title">lorem</h2>
-                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
-                            <p className="card-text para3">Lorem ipsum dolor sit.</p>
-                            <div className="d-grid gap-2">
-                                <button className="btn btn-dark" type="button">Sign Up</button>
-                            </div>
+                        <img className="rounded" src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" style={{height:"100px"}}></img>
                         </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4">
                         <div className="card pricing-col">
-                        <div className="card-header"><h3 className="pheader">Name3</h3></div>
+                        <div className="card-header"><h3 className="pheader">Daniel</h3></div>
                         <div className="card-body">
-                            <h2 className="card-title">lorem</h2>
-                            <p className="card-text para3">Lorem ipsum dolor sit</p>
-                            <p className="card-text para3">Lorem ipsum dolor sit</p>
-                            <p className="card-text para3">Lorem ipsum dolor sit</p>
-                            <div className="d-grid gap-2">
-                                <button className="btn btn-dark" type="button">Sign Up</button>
-                            </div>
+                        <img className="rounded" src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" style={{height:"100px"}}></img>
                         </div>
                         </div>
                     </div>
                     </div>
 
                 </section>
-                <section id="features">
-                <div className="row marbot">
-                <div className="col-lg-4 feature1">
-                    <i className="icon fas fa-check-circle fa-4x"></i>
-                    <h3 className="h31">Feature 1.</h3>
-                    <p className="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, magni..</p>
-                </div>
-                <div  className="col-lg-4 feature1">
-                    <i className="icon fas fa-bullseye fa-4x"></i>
-                    <h3 className="h31">Feature 2.</h3>
-                    <p className="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div  className="col-lg-4 feature1">
-                    <i className="icon fas fa-address-book fa-4x"></i>
-                    <h3 className="h31">Feature 3.</h3>
-                    <p className="para1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, quia.</p>
-                </div>
-                </div>
-            </section>
             </div>
         </div>
     );

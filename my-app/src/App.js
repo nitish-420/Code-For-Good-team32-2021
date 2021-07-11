@@ -12,7 +12,8 @@ import { VolunteerForm } from "./components/profile/VolunteerForm"
 import { ReportSubmission } from "./components/profile/ReportSubmission"
 import { AddEvent } from "./components/addevent/AddEvent"
 import { ReviewForm } from "./components/reviewform/ReviewForm"
-
+import { VolunteerCard } from "./components/reviewform/VolunteerCard"
+import { Post } from "./components/Post.jsx"
 import {
     BrowserRouter as Router,
     Switch,
@@ -37,6 +38,8 @@ function App() {
                         <Route exact path="/profile/VolunteerForm" component={VolunteerForm} />
                         <Route exact path="/profile/ReportSubmission" component={ReportSubmission} />
                         <Route exact path="/reviewform" component={ReviewForm} />
+                        <Route exact path="/post" component={Post} />
+                        <Route exact path="/volunteercard" component={VolunteerCard} />
                     </Switch>
                     <Footer />
                 </Router>

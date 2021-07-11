@@ -3,6 +3,10 @@
   background: radial-gradient(#981d26, #500e10ea);
 }
 
+a {
+  cursor: pointer;
+}
+
 .bg-logo {
   background-image: url(../../images/logo-final.png);
   height: 50px;
@@ -30,4 +34,8 @@
   font-weight: 600;
   background-color: #393e46;
   border: 1px solid white;
+}
+
+.nav-item:hover {
+  cursor: pointer;
 }

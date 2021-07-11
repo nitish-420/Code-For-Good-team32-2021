@@ -94,7 +94,12 @@ body {
   /* background-color: #f1f1f1; */
   margin: 10px;
 }
-
+.dashblock {
+  margin-top: 10px;
+  padding: 5px;
+  background: radial-gradient(#981d26, #500e10ea);
+  color: white;
+}
 .listele a {
   text-decoration: none;
   cursor: pointer;
