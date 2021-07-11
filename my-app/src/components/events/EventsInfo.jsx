@@ -70,7 +70,7 @@ Suspendisse et elit sodales, aliquam enim sed, egestas sapien. Aliquam erat volu
                         </div>
                     </div>
                     <Button variant="contained" class = "reg-btn">Register</Button>
-                    
+                    <Link exact to="/events"><button className="btn btn-primary">Back</button></Link>
                     </div>
                 </div>
             </div>

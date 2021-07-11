@@ -30,6 +30,10 @@ export const EventHelper = ({ eventObj }) => {
             .catch();
     }
 
+    let handle = () => {
+        history.push('/EventsInfo');
+    }
+
     return (
         <>
             <Grid className="fields" container spacing={3}>
@@ -56,7 +60,7 @@ export const EventHelper = ({ eventObj }) => {
                                     eventObj.joined ? "Cancel" : "Register"
                                 }
                             </Button>
-                            <Button size="small" variant="contained" style={{ backgroundColor: "#00000", color: "black" }}>
+                            <Button size="small" variant="contained" style={{ backgroundColor: "#00000", color: "black" }} onClick={() => handle()}>
                                 Learn more
                             </Button>
                         </CardActions>
