@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState , useEffect} from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -6,9 +6,38 @@ import Button from "@material-ui/core/Button";
 import "./VolunteerForm.css";
 import { useHistory } from 'react-router-dom';
 import { ProfileHeader } from './ProfileHeader'
+import axios from 'axios'
+import { useAuth } from '../../context/AuthContext'
 
 export const VolunteerForm = () => {
     let history = useHistory();
+    const [vol, setVol] = useState();
+    const [data, setData] = useState();
+    let { user } = useAuth();
+
+    let handleChange = (e) => {
+        let { name, value } = e.target;
+        setVol({ ...vol, [name]: value });
+    }
+
+    let handleSave = () => {
+        axios.post('/profile/personalInfo', vol)
+            .then()
+            .catch(err => console.log(err));
+    }
+
+    useEffect(async () => {
+        if (user) {
+            console.log(user);
+            
+            await axios.post('/profile/personalInfo1', { email: user.email })
+                .then(res => {
+                    console.log(res.data);
+                    setData(res.data);
+                })
+                .catch(err => console.log(err));
+        }
+    }, []);
 
     return (
         <>
@@ -35,46 +64,47 @@ export const VolunteerForm = () => {
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 required
-                                id="lastName"
-                                name="lastName"
-                                label="Last name"
-                                variant="outlined"
-                                fullWidth
-                                autoComplete="family-name"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                required
                                 id="email"
-                                name="Email"
-                                label="Email Adress"
+                                name="email"
+                                label={data ? data.email : "email"}
                                 variant="outlined"
                                 fullWidth
                                 autoComplete="email"
+                                value={data ? data.email : null}
+                                onChange={(e) => {
+                                    handleChange(e)
+                                }}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 required
                                 id="phonenumber"
-                                name="PhoneNumber"
-                                label="Phone Number"
+                                name="mobile"
+                                label={data ? '' : "Phone Number"}
                                 variant="outlined"
                                 fullWidth
                                 autoComplete="phone-number"
+                                onChange={(e) => {
+                                    handleChange(e)
+                                }}
+                                value={data ? data.mobile : null}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 required
                                 id="DOB"
-                                name="Email"
+                                name="dob"
                                 type={Date}
-                                label="Date Of Birth"
+                                label = {data ? '' : "Date Of Birth"}
                                 variant="outlined"
                                 fullWidth
                                 autoComplete="given-name"
+                                onChange={(e) => {
+                                    handleChange(e)
+                                }}
+                                value={data ? data.dob : null}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -92,11 +122,15 @@ export const VolunteerForm = () => {
                             <TextField
                                 required
                                 id="address1"
-                                name="address1"
-                                label="Address line 1"
+                                name="address"
+                                label={data ? '' : "Address line 1"}
                                 variant="outlined"
                                 fullWidth
                                 autoComplete="volunteer address-line1"
+                                onChange={(e) => {
+                                    handleChange(e)
+                                }}
+                                value={data ? data.location : null}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -147,6 +181,7 @@ export const VolunteerForm = () => {
                                     variant="outlined"
                                     color="secondary"
                                     href="#outlined-buttons"
+                                    onClick={() => { handleSave()}}
                                 >
                                     Save
                                 </Button>

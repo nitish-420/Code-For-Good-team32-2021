@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -27,11 +27,17 @@ export const ReportSubmission = () => {
         // user.email
         // reportObj
         // imageArray
-
-        axios.post('/profile/reportSubmission', { reportObj: reportObj, imageArray: imageArray, email: user.email })
-            .then()
-            .catch(err => console.log(err));
-        
+        if (user) {
+            axios.post('/profile/reportSubmission', { reportObj: reportObj, imageArray: imageArray, email: user.email })
+                .then((res) => {
+                    if (res) {
+                        axios.post('/review/reports', { report: res })
+                            .then(e => console.log(e))
+                            .catch(err => console.log(err));
+                    }
+                })
+                .catch(err => console.log(err));
+        }
     }
 
     return (
@@ -91,8 +97,8 @@ export const ReportSubmission = () => {
                                         multiple
                                         onChange={(e) => {
                                             if (e.target) {
-                                            setImageArray(e.target.files);
-                                            console.log(imageArray);
+                                                setImageArray(e.target.files);
+                                                console.log(imageArray);
                                             }
                                         }}
                                     />
@@ -111,7 +117,7 @@ export const ReportSubmission = () => {
                                     sm={6}
                                     variant="contained"
                                     color="secondary"
-                                    onClick={() => { handleSubmit()}}
+                                    onClick={() => { handleSubmit() }}
                                 >
                                     Submit
                                 </Button>

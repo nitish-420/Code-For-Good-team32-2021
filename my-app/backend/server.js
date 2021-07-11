@@ -22,8 +22,8 @@ const PastEvent = require('./models/pastevents');
 
 
 
-const Admin_id='60e9cc0464e7993a2c944cf1';
-const Coordinate_id='60e9e63a7731ee1083bd6a03';
+const Admin_id = '60e9cc0464e7993a2c944cf1';
+const Coordinate_id = '60e9e63a7731ee1083bd6a03';
 
 
 
@@ -54,98 +54,114 @@ app.post('/signup', async (req, res) => {
 
 // ------------------- HOME -------------
 app.get('/home/events/upcoming', async (req, res) => {
-    const events = await Event.find({_id:{$in:upcomingEventArray}})
+    const events = await Event.find({ _id: { $in: upcomingEventArray } })
     res.send(events);
-//   [{},{},{}] 
+    //   [{},{},{}] 
 })
 
 // ----------------profile-----------------------------
-// app.get('/profile/dashboard', async (req, res) => {
-//     const {userId}=req.params;
-//     const user=await user.findById(userId);
-//     res.send(user);
-// })
+app.post('/profile/dashboard', async (req, res) => {
+    const { email } = req.body;
 
-// app.post('/profile/personalInfo', async (req, res) => {
-//     const {id} = req.params;
-//     const user=await User.findById(id);
-//     res.send(user);
+    let user = await User.findOne({ email: email });
+    console.log(user, email);
+    res.send(user);
+})
 
-// })
+app.post('/profile/personalInfo', async (req, res) => {
+    const { email, dob, address: location, mobile } = req.body;
+    // const user = await User.findOneAndUpdate({ email: email }, { ...req.body });    
+    let user = await User.updateOne({ email: email }, { ...req.body });
+    console.log(user);
+    res.send(user);
+})
 
-// app.post('/profile/reportSubmission', async (req, res) => {
-//     // user.email
-//     // reportObj
-//     // imageArray
-//     const {reportId}=req.params;
-//     const report=await Report.findById(reportId);
-//     res.send(report)
-// })
+app.post('/profile/personalInfo1', async (req, res) => {
+    const { email } = req.body;
+    console.log(email);
+    let user = await User.find({ email: email });
+    console.log(user);
+    res.send(user);
+})
+
+
+app.post('/profile/reportSubmission', async (req, res) => {
+    // email
+    // reportObj
+    // imageArray
+    const { email, title,hours,images } = req.body;
+    const user = await User.find({ email: email });
+    const event = await Event.find({ title: title });
+
+    const report=new Report({
+        user:user,
+        event:event,
+        minutes:hours*60,
+        images:[...images]
+    })
+    await report.save()
+
+    res.send(report)
+})
+
 // app.post('/profile/personalInfo', async (req, res) => {
 //     const {email}=req.params;
 //     const report=await Report.findOneAndUpdate({email:email},{...req.body});
-    
 // })
 
 // // ------------- Events ------------------------------------------------
-// app.get('/events/upcoming', async (req, res) => {
-//     const events = await UpComingEvent.find({});
-//     res.send(events)
-// })
 
-// app.get('/events/past', async (req, res) => {
-//     const events = await PastEvent.find({});
-//     res.send(events)
-// })
+app.get('/events/upcoming', async (req, res) => {
+    const events = await UpComingEvent.find({});
+    res.send(events)
+})
 
-// app.post('/event/new', upload.array('image'), async (req, res, next) => {
-//     // eventObj
-//     console.log(req.body);
-//     // const event = new Event(req.body.event);
-//     // event.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
-//     // await event.save();
-//     // upcomingEventArray.shift();
-//     // upcomingEventArray.push(event._id);
+app.get('/events/past', async (req, res) => {
+    const events = await PastEvent.find({});
+    res.send(events)
+})
 
-//     // console.log(campground);
-//     // req.flash('success', 'Successfully made a new campground!');
-// })
+//, upload.array('image')
+app.post('/event/new', async (req, res, next) => {
+    // eventObj
+
+    console.log(req.body);
+    // const event = new Event(req.body.event);
+    // event.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
+    // await event.save();
+    // upcomingEventArray.shift();
+    // upcomingEventArray.push(event._id);
+
+    // console.log(campground);
+    // req.flash('success', 'Successfully made a new campground!');
+})
 
 // app.post('/event/show', async (req, res) => {
-//     const { id } = req.params;
+//     const { id } = req.body;
 //     const event = await Event.findById(id);
 //     res.send(event);
 // })
 
-// app.get('/events/index', async (req, res) => {
-//     const events = await Event.find({});
-//     res.send(events)
-// })
+app.get('/event/register', async (req, res) => {
+    console.log(req.body);
 
-// app.get('/event/register',async (req,res)=>{
-//     const {email,eventId,joined}=req.params;
-//     const user=await User.find({email:email});
-//     const event=await Event.findById(eventId);
-//     await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
+    const { email, eventId, joined } = req.body;
+    const user = await User.find({ email: email });
+    const event = await Event.findById(eventId);
+    await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
 
-//     if(parserInt(joined)===1){
-//         await user.updateOne({$pull:{pendingEvents:{event}}})
-//     }
-//     else{
-//         user.pendingEvents.push(event);
-//         await user.save();
-//     }
-// })
+    if (parserInt(joined) === 1) {
+        await user.updateOne({ $pull: { pendingEvents: { event } } })
+    }
+    else {
+        user.pendingEvents.push(event);
+        await user.save();
+    }
+})
 
+app.post('/review/reports', async (req, res) => {
+    const reviews = await ReviewReport.findById(Coordinate_id);
+    res.send(reviews);
+})
 
-// // ----------------review report---------------------
-
-// app.get('/review/reports',async (req,res)=>{
-//     const reviews=await  ReviewReport.findById(Coordinate_id);
-//     res.send(reviews);
-// })
-
-
-
-// here starts server work
 server.listen(4000, () => console.log('server running..'));

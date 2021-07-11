@@ -11,7 +11,6 @@ export const Homepage = () => {
     useEffect(() => {
         axios.get('/home/events/upcoming')
             .then((res) => {
-                // console.log("corusel " , res.data[0].images);
                 setImg2(res.data[1].images[0]);
                 setImg1(res.data[0].images[0]);
                 setImg3(res.data[2].images[0]);

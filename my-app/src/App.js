@@ -34,9 +34,9 @@ function App() {
                         <Route exact path="/reviewform" component={ReviewForm} />
                         <Route exact path={["/profile" , "/profile/dashboard"]} component={Dashboard} />
                         <Route exact path="/eventsinfo" component={EventInfo} />
-                        <Route exact path="/volunteerform" component={VolunteerForm} />
-                        <Route exact path="/eventregister" component={EventRegister} />
-                        <Route exact path="/reportsubmissionform" component={ReportSubmission} />
+                        <Route exact path="/profile/VolunteerForm" component={VolunteerForm} />
+                        <Route exact path="/profile/ReportSubmission" component={ReportSubmission} />
+                        <Route exact path="/reviewform" component={ReviewForm} />
                     </Switch>
                     <Footer />
                 </Router>

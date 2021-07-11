@@ -31,7 +31,7 @@ export const Events = () => {
                 }
             </div>
             <div className="m-2">
-                <div className="fs-2">UpComing Events</div>
+                <div className="fs-2">Past Events</div>
                 {
                     upcomingEvents ? upcomingEvents.map(e => {
                         return <EventHelper eventObj={e}/>
