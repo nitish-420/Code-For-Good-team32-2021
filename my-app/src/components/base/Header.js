@@ -72,7 +72,7 @@ export const Header = () => {
                                 }}>Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#testimonials">Community</a>
+                                <a class="nav-link" href="/post">Community</a>
                             </li>
                             {userTab}
                         </ul>
