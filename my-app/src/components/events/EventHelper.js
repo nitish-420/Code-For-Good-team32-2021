@@ -31,7 +31,7 @@ export const EventHelper = ({ eventObj }) => {
     }
 
     let handle = () => {
-        history.push('/EventsInfo');
+        // history.push('/EventsInfo');
     }
 
     return (
