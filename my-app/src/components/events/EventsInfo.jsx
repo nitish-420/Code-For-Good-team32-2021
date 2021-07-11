@@ -69,8 +69,8 @@ In pellentesque, urna fringilla cursus tempor, ligula nisl rutrum magna, non tem
 Suspendisse et elit sodales, aliquam enim sed, egestas sapien. Aliquam erat volutpat. Curabitur eget augue mattis turpis pharetra tristique. Proin vulputate sapien id augue fermentum, ut cursus sem vulputate. Nulla facilisi. Nulla scelerisque neque arcu, quis efficitur dolor volutpat sed. Donec luctus vitae sapien vel malesuada. Sed accumsan nec eros pharetra convallis. Nam eu neque sed felis vehicula dapibus. Mauris ornare euismod odio, in pretium purus condimentum a. Sed efficitur quis eros quis dapibus. Proin dapibus quam at pharetra sollicitudin. Suspendisse arcu lorem, consectetur ut ultrices sed, porttitor eu lectus. Donec bibendum fringilla magna sit amet congue.</p>
                         </div>
                     </div>
-                    <Button variant="contained" class = "reg-btn">Register</Button>
-                    <Link exact to="/events"><button className="btn btn-primary">Back</button></Link>
+                    <Button variant="contained" class = "btnh">Register</Button>
+                    
                     </div>
                 </div>
             </div>

@@ -3,42 +3,24 @@ import { EventHelper } from './EventHelper';
 import axios from 'axios';
 
 export const Events = () => {
-    const [upcomingEvents, setUpcomingEvents] = useState([]);
-    const [pastEvents, setPastEvents] = useState([]);
+
+    const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        axios.get('/events/upcoming')
+        axios.get('/home/events/upcoming')
             .then((res) => {
-                setUpcomingEvents(res.data);
-            })
-            .catch(err => console.log(err));
-        
-        axios.get('/events/past')
-            .then((res) => {
-                setPastEvents(res.data);
+                setEvents(res.data);
             })
             .catch(err => console.log(err));
     }, []);
 
     return (
         <>
-            <div className="m-2">
-                <div className="fs-2">UpComing Events</div>
-                {
-                    upcomingEvents ? upcomingEvents.map(e => {
-                        return <EventHelper eventObj={e}/>
-                    }) : "No Upcoming Events"
-                }
-                
-            </div>
-            <div className="m-2">
-                <div className="fs-2">Past Events</div>
-                {
-                    upcomingEvents ? upcomingEvents.map(e => {
-                        return <EventHelper eventObj={e}/>
-                    }) : "No Upcoming Events"
-                }
-            </div>
+            {
+                events ? events.map(e => {
+                    return <EventHelper eventObj={e}/>
+                }) : null
+            }
         </>
     );
 }
