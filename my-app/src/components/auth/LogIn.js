@@ -47,8 +47,8 @@ export const LogIn = () => {
     return (
         <div className="px-4 p-sm-0 customBg">
             <div className="maincontainer">
-                <div className="container-fluid">
-                    <div className="row no-gutter">
+                {/* <div className="container-fluid"> */}
+                    <div className="row no-gutter my-cont">
 
                         <div className="col-md-6 d-none d-md-flex bg-image"></div>
                         <div className="col-md-6 bg-light">
@@ -96,7 +96,7 @@ export const LogIn = () => {
                         </div>
 
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </div>
     );

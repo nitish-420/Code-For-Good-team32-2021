@@ -44,8 +44,8 @@ export const SignUp = () => {
 
     return (
         <div className="maincontainer">
-            <div class="container-fluid bg-color">
-                <div class="row no-gutter">
+            <div class="bg-color">
+                <div class="row no-gutter my-cont">
 
                     <div class="col-md-6 d-none d-md-flex bg-image">
                         {/* <img src="../../../signup.jpeg" class="img" /> */}
